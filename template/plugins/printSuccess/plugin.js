@@ -11,7 +11,7 @@ module.exports = {
         `${green(
           '                                                                           \n' +
             '  SSSSSSSSSSSSSS              SSSS                SSSSSSSSSSSSS              SSSSSSS \n' +
-          '    SSSSSSSSSSSSSS            SSSSSSSSS             SSSSSSSSSSSSSSS         SSSSSSSSSSSSS       \n' +
+            '  SSSSSSSSSSSSSS            SSSSSSSSS             SSSSSSSSSSSSSSS         SSSSSSSSSSSSS       \n' +
             '  SSSS                    SSSSSSSSSSSSS           SSSSS     SSSSS        SSSSSSSSSSSSSSS        \n' +
             '  SSSS                  SSSSSS     SSSSSS         SSSSS    SSSSS        SSSSSS     SSSSSS       \n' +
             '  SSSSSSSSSSSSSS      SSSSSSS      SSSSSSS        SSSSSSSSSSSSS        SSSSSSS     SSSSSSS           \n' +

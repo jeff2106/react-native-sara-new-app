@@ -3,6 +3,7 @@
 Ce projet est un modele [React Native](https://facebook.github.io/react-native/) qui peut être utilisé pour démarrer une application mobile.
 
 Ce template fournis **une architecture optimisée pour la création d'applications mobiles multiplateformes solides** grâce à la séparation des préoccupations entre l'interface utilisateur et la logique métier. Il est entièrement documenté afin que chaque morceau de code qui atterrit dans votre application puisse être compris et utilisé.
+Ceci a été fais sous inspiration de ``` TheCodingMachine ``` avec leur boilerplate
 
 ```
 Si vous aimez le travail effectué , faite-nous le savoir 😊

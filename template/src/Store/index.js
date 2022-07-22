@@ -14,11 +14,10 @@ import {
 
 import { api } from '@/Services/api'
 import theme from './Theme'
-import Users from './Users'
+
 const reducers = combineReducers({
   theme,
   api: api.reducer,
-  Users,
 })
 
 const persistConfig = {

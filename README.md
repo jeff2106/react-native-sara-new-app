@@ -1,55 +1,31 @@
-<div align="center">
-    <img src="documentation/static/img/TOM-Legend.png" alt="Logo" width="100%">
-</div>
+# Le template react-native de sara
 
-![React Native Boilerplate License](https://img.shields.io/github/license/thecodingmachine/react-native-boilerplate)
-![React Native Boilerplate Version](https://flat.badgen.net/npm/v/@thecodingmachine/react-native-boilerplate)
-![React Native Boilerplate Release Date](https://img.shields.io/github/release-date/thecodingmachine/react-native-boilerplate)
-![React Native Boilerplate Download](https://flat.badgen.net/npm/dt/@thecodingmachine/react-native-boilerplate)
-![React Native Boilerplate Stars](https://img.shields.io/github/stars/thecodingmachine/react-native-boilerplate)
-![React Native Boilerplate Top Language](https://img.shields.io/github/languages/top/thecodingmachine/react-native-boilerplate)
-![React Native Boilerplate TypeScript](https://badgen.net/npm/types/tslib)
-[![CI](https://github.com/thecodingmachine/react-native-boilerplate/actions/workflows/CI.yml/badge.svg)](https://github.com/thecodingmachine/react-native-boilerplate/actions/workflows/CI.yml)
+Ce projet est un [React Native](https://facebook.github.io/react-native/) qui peut être utilisé pour démarrer une application mobile.
 
-# TheCodingMachine React Native boilerplate
-
-This project is a [React Native](https://facebook.github.io/react-native/) boilerplate that can be used to kickstart a mobile application.
-
-The boilerplate provides **an optimized architecture for building solid cross-platform mobile applications** through separation of concerns between the UI and business logic. It is fully documented so that each piece of code that lands in your application can be understood and used.
+Ce template fournis **une architecture optimisée pour la création d'applications mobiles multiplateformes solides** grâce à la séparation des préoccupations entre l'interface utilisateur et la logique métier. Il est entièrement documenté afin que chaque morceau de code qui atterrit dans votre application puisse être compris et utilisé.
 
 ```
-If you love this boilerplate, give us a star, you will be a ray of sunshine in our lives :)
+Si vous aimez le travail effectué , faite-nous le savoir 😊
 ```
 
-## Requirements
+## Conditions
 
-Node 12 or greater is required. Development for iOS requires a Mac and Xcode 10 or up, and will target iOS 11 and up.
+Node 12 ou supérieur est requis. Le développement pour iOS nécessite un Mac et Xcode 10 ou supérieur, et ciblera iOS 11 et supérieur.
 
-You also need to install the dependencies required by React Native.  
-Go to the [React Native environment setup](https://reactnative.dev/docs/environment-setup), then select `React Native CLI Quickstart` tab.  
-Follow instructions for your given `development OS` and `target OS`.
+Vous devez également installer les dépendances requises par React Native.  
+Allez à la [Configuration de l'environnement React Native](https://reactnative.dev/docs/environment-setup), puis sélectionnez l'onglet `React Native CLI Quickstart`.  
+Suivez les instructions pour votre donnée `development OS` et `target OS`.
 
 ## Quick start
 
-To create a new project using the boilerplate simply run :
+Pour créer un nouveau projet à l'aide du template, exécutez simplement :
 
 ```
-npx react-native init MyApp --template @thecodingmachine/react-native-boilerplate
+npx react-native init MyApp --template https://github.com/jeff2106/react-native-sara-new-app
 ```
 
-Assuming you have all the requirements installed, you can run the project by running:
+En supposant que toutes les exigences sont installées, vous pouvez exécuter le projet en exécutant :
 
-- `yarn start` to start the metro bundler, in a dedicated terminal
-- `yarn <platform>` to run the *platform* application (remember to start a simulator or connect a device)
+- `yarn start` pour démarrer le groupeur de métro, dans un terminal dédié
+- `yarn <platform>` pour exécuter le *Plate-forme* application (n'oubliez pas de démarrer un simulateur ou de connecter un appareil)
 
-## Digging Deeper
-
-To learn more about this boilerplate, go to [full documentation](https://thecodingmachine.github.io/react-native-boilerplate)
-
-## License
-
-This project is released under the [MIT License](LICENSE).
-
-## About us
-
-[TheCodingMachine](https://www.thecodingmachine.com/) is a web and mobile agency based in Paris and Lyon, France. We are [constantly looking for new developers and team leaders](https://www.thecodingmachine.com/nous-rejoindre/) and we love [working with freelancers](https://coders.thecodingmachine.com/). You'll find [an overview of all our open source projects on our website](https://thecodingmachine.io/open-source) and on [Github](https://github.com/thecodingmachine).

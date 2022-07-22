@@ -26,8 +26,12 @@ npx react-native init MyApp --template https://github.com/jeff2106/react-native-
 
 En supposant que toutes les exigences sont installées, vous pouvez exécuter le projet en exécutant :
 
+**Si vous utilisez le package manager YARN 👇🏾**
+
 - `yarn start` pour démarrer le métro, dans un terminal dédié
 - `yarn <platform>` pour exécuter la *Plate-forme* application (n'oubliez pas de démarrer un simulateur ou de connecter un appareil)
+
+**Si vous utilisez le package manager NPM 👇🏾**
 - `npm run start` pour démarrer le métro, dans un terminal dédié
 - `npm run <platform>` pour exécuter la *Plate-forme* application (n'oubliez pas de démarrer un simulateur ou de connecter un appareil)
 

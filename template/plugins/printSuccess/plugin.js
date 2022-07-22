@@ -1,40 +1,40 @@
-const { green, blue } = require('kleur')
+const { green, blue , red} = require('kleur')
 
 module.exports = {
   async apply(value, previousValues) {
     return new Promise(resolve => {
       console.log('\n')
       console.log(
-        'TheCodingMachine React-Native Boilerplate initialized with success ! 🚀\n',
+        "Bienvenue  , Je suis Sara et je suis content de voir que tu va utiliser mon template , let's Go !!!! ! 🚀\n",
       )
       console.log(
         `${green(
-          '                                                                    .-`    `::  \n' +
-            ' `/////////////     `/shhhy+-   ://.        /sy/                   /ss/   :NMN: \n' +
-            ' `sssssyhhhyhhy:` `yMMMMNNMMMd. osss:     `hMMMh-    .-`         `+ss:   +MMm/. \n' +
-            '      :MMM+----. `mMMm+:-`.oo/` osssyo`  `dMMMMh-   ohhh-       `oyy+-  sMMd/.  \n' +
-            '      :MMM+`     oMMN/-         osssyhs`.mMMMMMh-   -hds`      .syy+- `hMMh:`   \n' +
-            '      :MMM+`     hMMd:          oss-ohhhMMMhdMMh-    `.       +NNm/. .dMMy:`    \n' +
-            '      :MMM+`     oMMN/          oss-`shdMMd:dMMh-    :-`     sMMd/. -NMMo-      \n' +
-            '      :MMM+`     `mMMm/`  `/+:. oss- `sdMd:.hMMh-   hMys-  `hMMh:` -hdy-`       \n' +
-            '      :MMM+`      `yMMMMdssss+  oss.  `oh/- hMMh-   -hyo:  dMMs:` -ss+`         \n' +
-            '      .oys:`        .+yhyo/-    -::`    ``  -syo-     ..`  +mo-   `//           \n' +
-            '        ``             ```                    ``            `.                  ',
+          '                                                                           \n' +
+            '  SSSSSSSSSSSSSS              SSSS                SSSSSSSSSSSSS              SSSSSSS \n' +
+            '  SSSSSSSSSSSSSS            SSSSSSSSS             SSSSSSSSSSSSSSS         SSSSSSSSSSSSS       \n' +
+            '  SSSS                    SSSSSSSSSSSSS           SSSSS     SSSSS        SSSSSSSSSSSSSSS        \n' +
+            '  SSSS                  SSSSSS     SSSSSS         SSSSS    SSSSS        SSSSSS     SSSSSS       \n' +
+            '  SSSSSSSSSSSSSS      SSSSSSS      SSSSSSS        SSSSSSSSSSSSS        SSSSSSS     SSSSSSS           \n' +
+            '  SSSSSSSSSSSSSS     SSSSSSSSSSSSSSSSSSSSSSS      SSSSSSSSSSSSSS      SSSSSSSSSSSSSSSSSSSSS            \n' +
+            '            SSSS   SSSSSSSSSSSSSSSSSSSSSSSSSS     SSSSS    SSSSSS     SSSSSSSSSSSSSSSSSSSSS           \n' +
+            '            SSSS   SSSSSS              SSSSSS     SSSSS     SSSSSS    SSSSSSS       SSSSSSS             \n' +
+            ' SSSSSSSSSSSSSSS   SSSSS                SSSSS     SSSSS      SSSSSS   SSSSSS         SSSSSS    \n' +
+            ' SSSSSSSSSSSSSSS   SSSS                  SSSS     SSSSS        SSSSS  SSSSS           SSSSS          ',
         )}`,
       )
       if (previousValues.typescript) {
-        console.log(blue('THE TYPESCRIPT VERSION 📘'))
+        console.log(blue("Desolé mais la version Typescript n'est pas encore disponible !"))
       }
       console.log('\n')
 
       console.log(
-        '- 📚 If you need to read more about this boilerplate : https://thecodingmachine.github.io/react-native-boilerplate/',
+        '- 📚 Si vous avez besoin d\'en savoir plus sur ce template: +2250555412087',
       )
       console.log(
-        '- 🤕 If you have some troubles : https://github.com/thecodingmachine/react-native-boilerplate/issues',
+        '- 😩 Si vous avez des problèmes : jeanphilippesara225@gmail.com ',
       )
       console.log(
-        '- ⭐ If you love this boilerplate, give us a star, you will be a ray of sunshine in our lives :) https://github.com/thecodingmachine/react-native-boilerplate',
+      '- ⭐ Si vous aimez ce Template , laissez-moi une étoile, vos avis me permettrons a apporter plus de correctif 🫶🏼🫶🏼',
       )
       resolve()
     })

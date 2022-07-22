@@ -1,8 +1,0 @@
-export { default as FetchDeclarations } from './FetchDeclarations'
-export { default as FetchFormDeclaration } from './FetchFormDeclaration'
-export { default as VerifDeclarationOTP } from './VerifDeclarationOTP'
-export { default as FetchPayment } from './FetchPayment'
-export { default as FetchPaymentSuccess } from './FetchPaymentSuccess'
-export { default as FetchDeclarationsEffectue } from './FetchDeclarationsEffectue'
-export { default as FetchPaymentReject } from './FetchPaymentReject'
-export { default as UpdateConfig } from './UpdateConfig'

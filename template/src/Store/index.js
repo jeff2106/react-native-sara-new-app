@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { combineReducers } from 'redux'
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import { setupListeners } from '@reduxjs/toolkit/query'
 import {
   persistReducer,
   persistStore,
@@ -10,44 +11,20 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist'
-import { configureStore } from '@reduxjs/toolkit'
 
-import startup from './Startup'
+import { api } from '@/Services/api'
 import theme from './Theme'
-import auth from './Auth'
-import role from './Role'
-import category from './Category'
-import paymentMethod from './PaymentMethod'
-import thirdUser from './ThirdUser'
-import fournisseur from './Fournisseur'
-import service from './Service'
-import form from './Form'
-import impot from './Impot'
-import TransacPayment from './Payment'
-import Statement from './Statement'
-import Dashboard from './dashboard'
-
+import Users from './Users'
 const reducers = combineReducers({
-  startup,
   theme,
-  auth,
-  role,
-  category,
-  paymentMethod,
-  thirdUser,
-  fournisseur,
-  service,
-  form,
-  impot,
-  TransacPayment,
-  Statement,
-  Dashboard,
+  api: api.reducer,
+  Users,
 })
 
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['theme', 'auth'],
+  whitelist: ['theme'],
 }
 
 const persistedReducer = persistReducer(persistConfig, reducers)
@@ -56,11 +33,10 @@ const store = configureStore({
   reducer: persistedReducer,
   middleware: getDefaultMiddleware => {
     const middlewares = getDefaultMiddleware({
-      /*serializableCheck: {
+      serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },*/
-      serializableCheck: false,
-    })
+      },
+    }).concat(api.middleware)
 
     if (__DEV__ && !process.env.JEST_WORKER_ID) {
       const createDebugger = require('redux-flipper').default
@@ -72,5 +48,7 @@ const store = configureStore({
 })
 
 const persistor = persistStore(store)
+
+setupListeners(store.dispatch)
 
 export { store, persistor }

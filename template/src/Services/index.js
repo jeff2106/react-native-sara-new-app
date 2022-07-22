@@ -14,7 +14,7 @@ const instance = axios.create({
 
 instance.interceptors.response.use(
   response => {
-    if (response?.data._erreur === -101) {
+    if (response?.data?._erreur === -101) {
       console.debug('Votre session a expiré, veuillez vous réconnecter')
       navigateAndSimpleReset('SessionExpire')
       return handleError({

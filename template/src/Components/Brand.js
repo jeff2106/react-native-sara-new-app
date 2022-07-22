@@ -1,22 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { View, Image } from 'react-native'
-import { useTheme } from '@/Hooks'
+import { View } from 'react-native'
+import { useTheme } from '@/Theme'
+import { default as Image } from 'react-native-fast-image'
 
-const Brand = ({ height, width, mode }) => {
+const Brand = ({ height, width, mode, style }) => {
   const { Layout, Images } = useTheme()
 
   return (
-    <View style={{ height, width }}>
-      <Image style={Layout.fullSize} source={Images.logo} resizeMode={mode} />
+    <View style={[{ height, width }, style]}>
+      <Image style={Layout.fullSize} source={Images.logo_inline} resizeMode={mode} />
     </View>
   )
 }
 
 Brand.propTypes = {
-  height: PropTypes.number,
+  height: PropTypes.any,
   mode: PropTypes.oneOf(['contain', 'cover', 'stretch', 'repeat', 'center']),
-  width: PropTypes.number,
+  width: PropTypes.any,
 }
 
 Brand.defaultProps = {

@@ -1,6 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import { setupListeners } from '@reduxjs/toolkit/query'
+import { combineReducers } from 'redux'
 import {
   persistReducer,
   persistStore,
@@ -11,19 +10,44 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist'
+import { configureStore } from '@reduxjs/toolkit'
 
-import { api } from '@/Services/api'
+import startup from './Startup'
 import theme from './Theme'
+import auth from './Auth'
+import role from './Role'
+import category from './Category'
+import paymentMethod from './PaymentMethod'
+import thirdUser from './ThirdUser'
+import fournisseur from './Fournisseur'
+import service from './Service'
+import form from './Form'
+import impot from './Impot'
+import TransacPayment from './Payment'
+import Statement from './Statement'
+import Dashboard from './dashboard'
 
 const reducers = combineReducers({
+  startup,
   theme,
-  api: api.reducer,
+  auth,
+  role,
+  category,
+  paymentMethod,
+  thirdUser,
+  fournisseur,
+  service,
+  form,
+  impot,
+  TransacPayment,
+  Statement,
+  Dashboard,
 })
 
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['theme'],
+  whitelist: ['theme', 'auth'],
 }
 
 const persistedReducer = persistReducer(persistConfig, reducers)
@@ -32,10 +56,11 @@ const store = configureStore({
   reducer: persistedReducer,
   middleware: getDefaultMiddleware => {
     const middlewares = getDefaultMiddleware({
-      serializableCheck: {
+      /*serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }).concat(api.middleware)
+      },*/
+      serializableCheck: false,
+    })
 
     if (__DEV__ && !process.env.JEST_WORKER_ID) {
       const createDebugger = require('redux-flipper').default
@@ -47,7 +72,5 @@ const store = configureStore({
 })
 
 const persistor = persistStore(store)
-
-setupListeners(store.dispatch)
 
 export { store, persistor }

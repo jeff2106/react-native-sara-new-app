@@ -1,22 +1,392 @@
 import React from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { ExampleContainer } from '@/Containers'
+import { useSelector } from 'react-redux'
+import { createStackNavigator } from '@react-navigation/stack'
+import {
+  AccountAddRoleScreen,
+  AccountAddUserScreen,
+  AccountManageUserScreen,
+  AccountRoleListScreen,
+  AccountScreen,
+  AccountUpdateEnterpriseScreen,
+  AccountUpdateInformationsScreen,
+  AccountUpdateLogoScreen,
+  AccountUpdatePasswordScreen,
+  AccountUpdateProfilImageScreen,
+  AccountUpdateRoleScreen,
+  AddBankAccountScreen,
+  AddCreditCardScreen,
+  AddMobileMoneyScreen,
+  CompanyListScreen,
+  PaymentDoneScreen,
+  PaymentHistoryDetailsScreen,
+  PaymentResumeScreen,
+  SelectFactureScreen,
+  ServiceFactureFormScreen,
+  ServiceListScreen,
+  ServiceRechargeFormScreen,
+  ServiceDemandeFormScreen,
+  ServiceDemandResumeScreen,
+  ServiceDemandeDoneScreen,
+  ImpotServiceScreen,
+  ImpotSetupScreen,
+  ImpotSetupWizardScreen,
+  ImpotDemandeNTDScreen,
+  FournisseursConfiguresScreen,
+  FournisseurConfigureDetailsScreen,
+  SessionExpireScreen,
+  ListeDeclarationAttenteScreen,
+  ListeDeclarationHorsDelaisScreen,
+  DeclarationWizardScreen,
+  DeclarationOTPScreen,
+  DeclarationDoneScreen,
+  ListeDeclarationEffectueScreen,
+  DeclarationDetailsScreen,
+  ImpotUpdateConfigScreen,
+  ImpotUpdateConfigDoneScreen,
+  WaitingForPaymentListScreen,
+  PaymentPendingListScreen,
+  PaymentSucceedListScreen,
+  PaymentSucceedDetails,
+  PaymentProccess,
+  PaymentPendingScreen,
+  PaymentPendingDetails,
+  PaymentPendingProccess,
+  DirectPayment,
+  PaymentSuccedScreen,
+  PaymentSuccedDetails,
+  PaymentSuccedProccess,
+  CompanyListScreenNews,
+  ImpotServiceScreenNews,
+  HomeScreenNews,
+  StatementPendingScreen,
+  StatementPendingProccess,
+  StatementPendingDetails,
+  StatementRejectedDetails,
+  StatementSuccedScreen,
+  StatementSuccedProccess,
+  StatementSuccedDetails,
+  TransactionOutOfTimeScreen,
+  ListeDeclarationAttenteScreenNews,
+  ListeDeclarationHorsDelaisScreenNews,
+  ListeDeclarationEffectueScreenNews,
+  DeclarationDetailsScreenNews,
+  DeclarationWizardScreenNews,
+  DeclarationOTPScreenNews,
+  DeclarationDoneScreenNews,
+  ImpotDemandeNTDScreenNews,
+  ImpotUpdateConfigScreenNews,
+  ImpotUpdateConfigDoneScreenNews,
+  ImpotSetupScreenNews,
+} from '@/Containers'
 
-const Tab = createBottomTabNavigator()
+const MainSctack = createStackNavigator()
+
+const AuthNavigator = require('@/Navigators/Auth').default
+const DrawerNavigator = require('@/Navigators/Drawer').default
 
 // @refresh reset
 const MainNavigator = () => {
+  const user = useSelector(state => state.auth.item)
+
   return (
-    <Tab.Navigator>
-      <Tab.Screen
-        name="Home"
-        component={ExampleContainer}
-        options={{
-          tabBarIconStyle: { display: 'none' },
-          tabBarLabelPosition: 'beside-icon',
-        }}
+    <MainSctack.Navigator
+      initialRouteName={user._status ? 'Tab' : 'Auth'}
+      headerMode={'none'}
+    >
+      <MainSctack.Screen name="Auth" component={AuthNavigator} />
+      <MainSctack.Screen name="Tab" component={DrawerNavigator} />
+      <MainSctack.Group>
+        <MainSctack.Screen
+          screenOptions={{ presentation: 'modal' }}
+          name="Account"
+          component={AccountScreen}
+        />
+        <MainSctack.Screen
+          name="AccountUpdateEnterprise"
+          component={AccountUpdateEnterpriseScreen}
+        />
+        <MainSctack.Screen
+          name="AccountAddUser"
+          component={AccountAddUserScreen}
+        />
+        <MainSctack.Screen
+          name="AccountManageUser"
+          component={AccountManageUserScreen}
+        />
+        <MainSctack.Screen
+          name="AccountUpdateInformations"
+          component={AccountUpdateInformationsScreen}
+        />
+        <MainSctack.Screen
+          name="AccountUpdatePassword"
+          component={AccountUpdatePasswordScreen}
+        />
+        <MainSctack.Screen
+          name="AccountUpdateLogo"
+          component={AccountUpdateLogoScreen}
+        />
+        <MainSctack.Screen
+          name="AccountUpdateProfilImage"
+          component={AccountUpdateProfilImageScreen}
+        />
+        <MainSctack.Screen
+          name="AccountRoleList"
+          component={AccountRoleListScreen}
+        />
+        <MainSctack.Screen
+          name="AccountAddRole"
+          component={AccountAddRoleScreen}
+        />
+        <MainSctack.Screen
+          name="AccountUpdateRole"
+          component={AccountUpdateRoleScreen}
+        />
+      </MainSctack.Group>
+      <MainSctack.Group>
+        <MainSctack.Screen
+          screenOptions={{ presentation: 'modal' }}
+          name="AddBankAccount"
+          component={AddBankAccountScreen}
+        />
+        <MainSctack.Screen
+          screenOptions={{ presentation: 'modal' }}
+          name="AddCreditCard"
+          component={AddCreditCardScreen}
+        />
+        <MainSctack.Screen
+          screenOptions={{ presentation: 'modal' }}
+          name="AddMobileMoney"
+          component={AddMobileMoneyScreen}
+        />
+      </MainSctack.Group>
+      <MainSctack.Group>
+        <MainSctack.Screen name="CompanyList" component={CompanyListScreen} />
+        <MainSctack.Screen name="ServiceList" component={ServiceListScreen} />
+        <MainSctack.Screen
+          name="ServiceFactureForm"
+          component={ServiceFactureFormScreen}
+        />
+        <MainSctack.Screen
+          name="ServiceRechargeForm"
+          component={ServiceRechargeFormScreen}
+        />
+        <MainSctack.Screen
+          name="ServiceDemandeForm"
+          component={ServiceDemandeFormScreen}
+        />
+      </MainSctack.Group>
+      <MainSctack.Screen name="PaymentDone" component={PaymentDoneScreen} />
+      <MainSctack.Screen
+        name="ServiceDemandeDone"
+        component={ServiceDemandeDoneScreen}
       />
-    </Tab.Navigator>
+      <MainSctack.Screen name="SelectFacture" component={SelectFactureScreen} />
+      <MainSctack.Screen name="PaymentResume" component={PaymentResumeScreen} />
+      <MainSctack.Screen
+        name="ServiceDemandResume"
+        component={ServiceDemandResumeScreen}
+      />
+      <MainSctack.Screen
+        name="PaymentHistoryDetails"
+        component={PaymentHistoryDetailsScreen}
+        screenOptions={{ presentation: 'modal' }}
+      />
+      <MainSctack.Screen
+        name="FournisseursConfigures"
+        component={FournisseursConfiguresScreen}
+        screenOptions={{ presentation: 'modal' }}
+      />
+      <MainSctack.Screen
+        name="FournisseurConfigureDetails"
+        component={FournisseurConfigureDetailsScreen}
+        screenOptions={{ presentation: 'modal' }}
+      />
+      <MainSctack.Group>
+        <MainSctack.Screen name="ImpotService" component={ImpotServiceScreen} />
+        <MainSctack.Screen
+          name="ImpotSetupScreen"
+          component={ImpotSetupScreen}
+        />
+        <MainSctack.Screen
+          name="ImpotSetupWizard"
+          component={ImpotSetupWizardScreen}
+        />
+        <MainSctack.Screen
+          name="ImpotDemandeNTD"
+          component={ImpotDemandeNTDScreen}
+        />
+        <MainSctack.Screen
+          name="ImpotUpdateConfig"
+          component={ImpotUpdateConfigScreen}
+        />
+        <MainSctack.Screen
+          name="ImpotUpdateConfigDone"
+          component={ImpotUpdateConfigDoneScreen}
+        />
+        <MainSctack.Screen
+          name="ListeDeclarationAttente"
+          component={ListeDeclarationAttenteScreen}
+        />
+        <MainSctack.Screen
+          name="ListeDeclarationHorsDelais"
+          component={ListeDeclarationHorsDelaisScreen}
+        />
+        <MainSctack.Screen
+          name="ListeDeclarationEffectue"
+          component={ListeDeclarationEffectueScreen}
+        />
+        <MainSctack.Screen
+          name="DeclarationDetails"
+          component={DeclarationDetailsScreen}
+        />
+        <MainSctack.Screen
+          name="DeclarationWizard"
+          component={DeclarationWizardScreen}
+        />
+        <MainSctack.Screen
+          name="DeclarationOTP"
+          component={DeclarationOTPScreen}
+        />
+        <MainSctack.Screen
+          name="DeclarationDone"
+          component={DeclarationDoneScreen}
+        />
+        <MainSctack.Screen
+          name="SessionExpire"
+          component={SessionExpireScreen}
+        />
+        <MainSctack.Screen
+          name="WaitingForPaymentList"
+          component={WaitingForPaymentListScreen}
+        />
+        <MainSctack.Screen name="PaymentProccess" component={PaymentProccess} />
+        <MainSctack.Screen
+          name="PaymentPendingListScreen"
+          component={PaymentPendingListScreen}
+        />
+        <MainSctack.Screen
+          name="PaymentSucceedListScreen"
+          component={PaymentSucceedListScreen}
+        />
+        <MainSctack.Screen
+          name="PaymentSucceedDetails"
+          component={PaymentSucceedDetails}
+        />
+        <MainSctack.Screen
+          name="PaymentPendingScreen"
+          component={PaymentPendingScreen}
+        />
+        <MainSctack.Screen
+          name="PaymentPendingDetails"
+          component={PaymentPendingDetails}
+        />
+        <MainSctack.Screen
+          name="PaymentPendingProccess"
+          component={PaymentPendingProccess}
+        />
+        <MainSctack.Screen
+          name="PaymentSuccedScreen"
+          component={PaymentSuccedScreen}
+        />
+        <MainSctack.Screen
+          name="PaymentSuccedDetails"
+          component={PaymentSuccedDetails}
+        />
+        <MainSctack.Screen
+          name="PaymentSuccedProccess"
+          component={PaymentSuccedProccess}
+        />
+        <MainSctack.Screen name="DirectPayment" component={DirectPayment} />
+
+        <MainSctack.Screen
+          name="CompanyListNews"
+          component={CompanyListScreenNews}
+        />
+      </MainSctack.Group>
+      <MainSctack.Group>
+        <MainSctack.Screen
+          name="ImpotServiceNews"
+          component={ImpotServiceScreenNews}
+        />
+        <MainSctack.Screen name="HomeScreenNews" component={HomeScreenNews} />
+        <MainSctack.Screen
+          name="StatementPendingScreen"
+          component={StatementPendingScreen}
+        />
+        <MainSctack.Screen
+          name="StatementPendingProccess"
+          component={StatementPendingProccess}
+        />
+        <MainSctack.Screen
+          name="StatementPendingDetails"
+          component={StatementPendingDetails}
+        />
+        <MainSctack.Screen
+          name="StatementSuccedScreen"
+          component={StatementSuccedScreen}
+        />
+        <MainSctack.Screen
+          name="StatementRejectedDetails"
+          component={StatementRejectedDetails}
+        />
+        <MainSctack.Screen
+          name="StatementSuccedProccess"
+          component={StatementSuccedProccess}
+        />
+        <MainSctack.Screen
+          name="StatementSuccedDetails"
+          component={StatementSuccedDetails}
+        />
+        <MainSctack.Screen
+          name="TransactionOutOfTimeScreen"
+          component={TransactionOutOfTimeScreen}
+        />
+        <MainSctack.Screen
+          name="ListeDeclarationAttenteScreenNews"
+          component={ListeDeclarationAttenteScreenNews}
+        />
+        <MainSctack.Screen
+          name="ListeDeclarationHorsDelaisScreenNews"
+          component={ListeDeclarationHorsDelaisScreenNews}
+        />
+        <MainSctack.Screen
+          name="ListeDeclarationEffectueScreenNews"
+          component={ListeDeclarationEffectueScreenNews}
+        />
+        <MainSctack.Screen
+          name="DeclarationDetailsScreenNews"
+          component={DeclarationDetailsScreenNews}
+        />
+        <MainSctack.Screen
+          name="DeclarationWizardScreenNews"
+          component={DeclarationWizardScreenNews}
+        />
+        <MainSctack.Screen
+          name="DeclarationOTPScreenNews"
+          component={DeclarationOTPScreenNews}
+        />
+        <MainSctack.Screen
+          name="DeclarationDoneScreenNews"
+          component={DeclarationDoneScreenNews}
+        />
+        <MainSctack.Screen
+          name="ImpotDemandeNTDScreenNews"
+          component={ImpotDemandeNTDScreenNews}
+        />
+        <MainSctack.Screen
+          name="ImpotUpdateConfigScreenNews"
+          component={ImpotUpdateConfigScreenNews}
+        />
+        <MainSctack.Screen
+          name="ImpotUpdateConfigDoneScreenNews"
+          component={ImpotUpdateConfigDoneScreenNews}
+        />
+        <MainSctack.Screen
+          name="ImpotSetupScreenNews"
+          component={ImpotSetupScreenNews}
+        />
+      </MainSctack.Group>
+    </MainSctack.Navigator>
   )
 }
 

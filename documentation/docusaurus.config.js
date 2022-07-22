@@ -6,15 +6,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'The React Native Boilerplate',
-  tagline: 'Simple, Lightweight and Scalable.',
-  url: 'https://thecodingmachine.github.io',
-  baseUrl: '/react-native-boilerplate/',
+  title: 'Le template React Native Sara',
+  tagline: 'Simple, léger et évolutif.',
+  url: 'https://github.com/jeff2106',
+  baseUrl: '/react-native-sara-new-app',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
-  organizationName: 'thecodingmachine',
-  projectName: 'react-native-boilerplate',
+  organizationName: 'sara-jean-philippe',
+  projectName: 'react-native-sara-new-app',
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -41,12 +41,12 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/thecodingmachine/react-native-boilerplate/edit/master/website-documentation/docs',
+            'https://github.com/jeff2106',
         },
         blog: {
           showReadingTime: true,
           editUrl:
-            'https://github.com/thecodingmachine/react-native-boilerplate/edit/master/website-documentation/blog',
+            'https://github.com/jeff2106',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -70,10 +70,10 @@ const config = {
         respectPrefersColorScheme: false,
       },
       navbar: {
-        title: 'React Native Boilerplate',
+      title: 'React Native SARA',
         logo: {
-          alt: 'React Native Boilerplate',
-          src: 'img/TOM-small.png',
+          alt: 'React Native SARA',
+          src: '',
         },
         items: [
           {
@@ -84,7 +84,7 @@ const config = {
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
-            href: 'https://github.com/thecodingmachine/react-native-boilerplate',
+            href: 'https://github.com/jeff2106',
             label: 'GitHub',
             position: 'right',
           },
@@ -127,12 +127,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/thecodingmachine/react-native-boilerplate',
+                href: 'https://github.com/jeff2106/react-native-sara-new-app',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} React Native Boilerplate, by TheCodingMachine. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} React Native SARA, by sara jean philippe. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

@@ -1,4 +1,4 @@
-# Le template react-native de sara
+# Le template react-native sara
 
 Ce projet est un modele [React Native](https://facebook.github.io/react-native/) qui peut être utilisé pour démarrer une application mobile.
 
@@ -19,33 +19,20 @@ Suivez les instructions pour votre donnée `development OS` et `target OS`.
 
 ## Démarrage rapide
 
-Pour créer un nouveau projet à l'aide du template, exécutez simplement :
+Pour créer un nouveau projet à l'aide du template, exécutez simplement :
 
 ```
 npx react-native init MyApp --template https://github.com/jeff2106/react-native-sara-new-app
 ```
-**🚨 Vous devez renommer votre application**
+**🚨Important**
 
-il y a de la manière manuelle qui serait de fouiller dans chaque fichier android ou ios voir l'actuel nom et le remplacer
-ou alors exécutait cette commande ci-dessous
-
-
-Cette commande pour l'installer de manière globale
-```
-npm install react-native-rename -g
-```
-Cette commande pour changer le nom du projet actuel par le nom que vous aurez choisi elle doit être executé a l'intérieur du projet
-```
-react-native-rename "Mon Application"
-```
-
-**🚨 N'oubliez pas de rajouter le local.properties dans le dossier android**
+N'oubliez pas d'ajouter le fichier *local.properties* dans le dossier android.
 
 ```
 sdk.dir=/Users/macbookpro/Library/Android/sdk
 ```
 
-En supposant que toutes les exigences sont installées, vous pouvez exécuter le projet en exécutant :
+En supposant que toutes les exigences sont installées, vous pouvez exécuter le projet en exécutant :
 
 **Si vous utilisez le package manager YARN 👇🏾**
 
@@ -55,7 +42,7 @@ En supposant que toutes les exigences sont installées, vous pouvez exécuter le
 **Si vous utilisez le package manager NPM 👇🏾**
 - `npm run start` pour démarrer le métro, dans un terminal dédié
 - `npm run <platform>` pour exécuter la *Plate-forme* application (n'oubliez pas de démarrer un simulateur ou de connecter un appareil)
-- `npx react-native-clean-project` commande utile pour nettoyer votre projet
+
 ## Auteur
 - Nom `sara jean philippe`
 - Numero `+2250555412087`

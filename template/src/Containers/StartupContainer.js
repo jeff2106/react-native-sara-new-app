@@ -29,7 +29,8 @@ const StartupContainer = () => {
     <View style={[Layout.fill, Layout.colCenter]}>
       <Brand />
       <ActivityIndicator size={'large'} style={[Gutters.largeVMargin]} />
-      <Text style={Fonts.textCenter}>{t('welcome')}</Text>
+      <Text style={Fonts.textCenter}>Bienvenue je suis SARA</Text>
+      <Text style={Fonts.textCenter}>Ceci est un template RN</Text>
     </View>
   )
 }

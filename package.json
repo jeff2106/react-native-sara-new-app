@@ -1,12 +1,12 @@
 {
   "name": "@sara2106/react-native-sara-new-app",
   "version": "3.4.5",
-  "description": "TheCodingMachine React Native Boilerplate",
+  "description": "Bienvenue sur mon template react Native, vous pouvez profiter d'une architecture solide et sécurisé",
   "repository": {
     "type": "git",
     "url": "https://github.com/jeff2106/react-native-sara-new-app.git"
   },
-  "author": "Sara Plehon Espoir Jean Philippe Lyon <jeanphilippesara225@gmail.com>",
+  "author": "Sara Plehon Espoir Jean Philippe <jeanphilippesara225@gmail.com>",
   "license": "",
   "bugs": {
     "url": "https://github.com/jeff2106/"

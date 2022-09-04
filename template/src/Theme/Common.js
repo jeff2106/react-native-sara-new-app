@@ -30,6 +30,15 @@ export default function ({ Colors, ...args }) {
         marginTop: 10,
         marginBottom: 10,
       },
+      DFLT_BG: {
+        backgroundColor: '#002D82',
+      },
+      WH_C: {
+        color: 'white',
+      },
+      B_null: {
+        borderWidth: 0,
+      },
     }),
   }
 }

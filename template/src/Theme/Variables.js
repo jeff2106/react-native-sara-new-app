@@ -13,8 +13,10 @@ export const Colors = {
   transparent: 'rgba(0,0,0,0)',
   inputBackground: '#FFFFFF',
   white: '#ffffff',
+  grayFade: 'rgba(108,103,103,0.25)',
   text: '#212529',
-  primary: '#E14032',
+  primary: '#002D82',
+  fadeprimary: 'rgba(0,45,130,0.34)',
   success: '#28a745',
   error: '#dc3545',
 }

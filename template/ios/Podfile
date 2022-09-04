@@ -3,7 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '11.0'
 
-target 'Boilerplate' do
+target 'MyApp' do
   config = use_native_modules!
 
   use_react_native!(
@@ -12,7 +12,15 @@ target 'Boilerplate' do
     :hermes_enabled => true
   )
 
-  target 'BoilerplateTests' do
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+  pod 'rn-fetch-blob', :path => '../node_modules/rn-fetch-blob'
+
+  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
+
+  pod 'react-native-document-picker', :path => '../node_modules/react-native-document-picker'
+
+  target 'MyAppTests' do
     inherit! :complete
     # Pods for testing
   end

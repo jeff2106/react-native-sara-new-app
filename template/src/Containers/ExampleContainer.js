@@ -6,17 +6,20 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
+  ToastAndroid,
+  Platform,
+  AlertIOS,
 } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
-import { Brand } from '@/Components'
+import { Brand, ToastCustom, Button } from '@/Components'
 import { useTheme } from '@/Hooks'
 import { useLazyFetchOneQuery } from '@/Services/modules/users'
 import { changeTheme } from '@/Store/Theme'
 import _getUser from '@/Store/Users/_getUser'
+import { showInfoToast, showSucessToast } from '@/Components/Toast'
 
 const ExampleContainer = () => {
-  const { t } = useTranslation()
   const { Common, Fonts, Gutters, Layout } = useTheme()
   const dispatch = useDispatch()
 
@@ -41,6 +44,7 @@ const ExampleContainer = () => {
   const onChangeTheme = ({ theme, darkMode }) => {
     dispatch(changeTheme({ theme, darkMode }))
   }
+
   return (
     <ScrollView
       style={Layout.fill}
@@ -56,7 +60,12 @@ const ExampleContainer = () => {
         {_error !== null ? (
           <Text style={Fonts.textRegular}>{error}</Text>
         ) : (
-          <Text style={Fonts.textRegular}>
+          <Text
+            style={[Fonts.textRegular, Fonts.textCenter]}
+            onPress={() => {
+              showInfoToast('bien', 'mo')
+            }}
+          >
             Je suis un faux utilisateur, mon nom est : {_uidata.name}
           </Text>
         )}
@@ -67,10 +76,12 @@ const ExampleContainer = () => {
           Layout.rowHCenter,
           Gutters.smallHPadding,
           Gutters.largeVMargin,
-          Common.backgroundPrimary,
+          Common.DFLT_BG,
         ]}
       >
-        <Text style={[Layout.fill, Fonts.textCenter, Fonts.textSmall]}>
+        <Text
+          style={[Layout.fill, Fonts.textCenter, Fonts.textSmall, Common.WH_C]}
+        >
           Entrez un id utilisateur
         </Text>
         <TextInput
@@ -86,24 +97,34 @@ const ExampleContainer = () => {
       <Text style={[Fonts.textRegular, Gutters.smallBMargin]}>Mode :</Text>
 
       <TouchableOpacity
-        style={[Common.button.rounded, Gutters.regularBMargin]}
+        style={[Common.button.rounded, Common.DFLT_BG, Gutters.regularBMargin]}
         onPress={() => onChangeTheme({ darkMode: null })}
       >
-        <Text style={Fonts.textRegular}>Auto</Text>
+        <Text style={[Fonts.textRegular, Common.WH_C]}>Auto</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
-        style={[Common.button.outlineRounded, Gutters.regularBMargin]}
+        style={[
+          Common.button.outlineRounded,
+          Common.B_null,
+          Common.DFLT_BG,
+          Gutters.regularBMargin,
+        ]}
         onPress={() => onChangeTheme({ darkMode: true })}
       >
-        <Text style={Fonts.textRegular}>Sombre</Text>
+        <Text style={[Fonts.textRegular, Common.WH_C]}>Sombre</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
-        style={[Common.button.outline, Gutters.regularBMargin]}
+        style={[
+          Common.button.outline,
+          Common.B_null,
+          Common.DFLT_BG,
+          Gutters.regularBMargin,
+        ]}
         onPress={() => onChangeTheme({ darkMode: false })}
       >
-        <Text style={Fonts.textRegular}>Claire</Text>
+        <Text style={[Fonts.textRegular, Common.WH_C]}>Claire</Text>
       </TouchableOpacity>
     </ScrollView>
   )

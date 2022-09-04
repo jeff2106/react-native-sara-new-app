@@ -1,6 +1,6 @@
 <manifest
   xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.boilerplate"
+  package="com.myapp"
 >
     <uses-permission android:name="android.permission.INTERNET" />
 

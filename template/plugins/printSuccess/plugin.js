@@ -16,14 +16,16 @@ module.exports = {
             '  SSSS                  SSSSSS     SSSSSS         SSSSS    SSSSS        SSSSSS     SSSSSS       \n' +
             '  SSSSSSSSSSSSSS      SSSSSSS      SSSSSSS        SSSSSSSSSSSSS        SSSSSSS     SSSSSSS           \n' +
             '  SSSSSSSSSSSSSS     SSSSSSSSSSSSSSSSSSSSSSS      SSSSSSSSSSSSSS      SSSSSSSSSSSSSSSSSSSSS            \n' +
-            '            SSSS   SSSSSSSSSSSSSSSSSSSSSSSSSS     SSSSS    SSSSSS     SSSSSSSSSSSSSSSSSSSSS           \n' +
-            '            SSSS   SSSSSS              SSSSSS     SSSSS     SSSSSS    SSSSSSS       SSSSSSS             \n' +
+            '           SSSSS   SSSSSSSSSSSSSSSSSSSSSSSSSS     SSSSS    SSSSSS     SSSSSSSSSSSSSSSSSSSSS           \n' +
+            '           SSSSS   SSSSSS              SSSSSS     SSSSS     SSSSSS    SSSSSSS       SSSSSSS             \n' +
             ' SSSSSSSSSSSSSSS   SSSSS                SSSSS     SSSSS      SSSSSS   SSSSSS         SSSSSS    \n' +
             ' SSSSSSSSSSSSSSS   SSSS                  SSSS     SSSSS        SSSSS  SSSSS           SSSSS          ',
         )}`,
       )
-      if (previousValues.typescript) {
-        console.log(blue("Desolé mais la version Typescript n'est pas encore disponible !"))
+      if (!previousValues.typescript) {
+        console.log(blue("Desolé mais la version seule version existante est en TypeScript !"))
+        resolve()
+        return
       }
       console.log('\n')
 

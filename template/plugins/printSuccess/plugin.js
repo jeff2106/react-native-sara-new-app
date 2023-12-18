@@ -22,10 +22,8 @@ module.exports = {
             ' SSSSSSSSSSSSSSS   SSSS                  SSSS     SSSSS        SSSSS  SSSSS           SSSSS          ',
         )}`,
       )
-      if (!previousValues.typescript) {
-        console.log(blue("Desolé mais la version seule version existante est en TypeScript !"))
-        resolve()
-        return
+      if (previousValues.typescript) {
+        //console.log(blue("Desolé mais la version Typescript n'est pas encore disponible !"))
       }
       console.log('\n')
 
